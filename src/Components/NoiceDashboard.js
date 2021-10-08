@@ -33,12 +33,8 @@ const NoiceDashboard = () => {
     for (let i = 0; i < tagsArray.length; i++) {
       formData.append("tags", tagsArray[i]);
     }
-
-    addTheIcons(formData).then((data) => {
-      if (data.error) {
-        console.log(data.error);
-        setValues({ ...values, error: data.error });
-      } else {
+    try {
+      addTheIcons(formData).then((data) => {
         setValues({
           ...values,
           name: "",
@@ -49,8 +45,13 @@ const NoiceDashboard = () => {
           error: "",
           success: true,
         });
-      }
-    });
+      });
+    } catch (error) {
+      setValues({
+        ...values,
+        error: "Failed to add icons.",
+      });
+    }
   };
 
   // handling text

@@ -20,7 +20,7 @@ const Navigation = () => {
                 Manage Icons
               </Link>
               <Link
-                to="/"
+                to="/noicedashboard"
                 style={{
                   marginRight: "30px",
                   textDecoration: "none",

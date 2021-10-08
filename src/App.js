@@ -7,7 +7,13 @@ function App() {
   return (
     <div className="App">
       <Link to="/noicedashboard">
-        <Button style={{ backgroundColor: "white", borderColor: "white" }}>
+        <Button
+          style={{
+            backgroundColor: "white",
+            borderColor: "white",
+            cursor: "none",
+          }}
+        >
           Go to dashboard
         </Button>
       </Link>
